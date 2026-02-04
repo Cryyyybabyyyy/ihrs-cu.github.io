@@ -5,17 +5,13 @@
 <title>IHRS | Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 <style>
+/* Reset and basic styling */
 html { scroll-behavior: smooth; }
-
-body {
-  margin:0;
-  font-family:'Segoe UI', Arial, sans-serif;
-  background:#f8f9fb;
-  color:#333;
-}
+body { margin:0; font-family:'Segoe UI', Arial, sans-serif; background:#f8f9fb; color:#333; }
 
 /* Navbar */
 nav {
@@ -35,125 +31,65 @@ nav a {
   font-size:0.95rem;
   transition:0.3s;
 }
-nav a:hover,
-nav a.active {
-  color:#a0c4ff;
-}
+nav a:hover, nav a.active { color:#a0c4ff; }
 
-/* Hero */
+/* Hero section */
 header {
-  background: url('https://images.unsplash.com/photo-1521540216272-a50305cd4421?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+  background: url('https://images.unsplash.com/photo-1677816744206-4e1e0f0b3bb7?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
   color:#fff;
   text-align:center;
   padding:140px 20px;
   position:relative;
   overflow:hidden;
 }
-header h1 {
-  font-size:3rem;
-  margin:0;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-  animation: fadeInDown 1.5s ease forwards;
+header::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.35);
 }
-header p {
-  font-size:1.3rem;
-  margin:12px 0 0;
-  opacity:0.85;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-  animation: fadeInUp 1.5s ease forwards;
-}
+header h1 { position:relative; font-size:2.8rem; margin-bottom:12px; z-index:1; }
+header p { position:relative; font-size:1.3rem; margin-bottom:20px; z-index:1; }
 .hero-btn {
+  position:relative;
   display:inline-block;
-  margin-top:20px;
-  padding:14px 30px;
+  padding:14px 32px;
   background:#4f46e5;
   color:#fff;
   text-decoration:none;
   border-radius:8px;
   font-weight:bold;
+  z-index:1;
   transition:all 0.3s ease;
 }
-.hero-btn:hover {
-  background:#6366f1;
-  transform:translateY(-3px);
-  box-shadow:0 5px 12px rgba(0,0,0,0.3);
-}
+.hero-btn:hover { background:#6366f1; transform:translateY(-3px); box-shadow:0 4px 12px rgba(0,0,0,0.2); }
 
-/* Hero animations */
-@keyframes fadeInDown {
-  0% { opacity:0; transform: translateY(-50px); }
-  100% { opacity:1; transform: translateY(0); }
-}
-@keyframes fadeInUp {
-  0% { opacity:0; transform: translateY(50px); }
-  100% { opacity:1; transform: translateY(0); }
-}
-
-/* Sections */
+/* Content sections */
 .container { max-width:1000px; margin:auto; padding:40px 20px; }
 section { padding:30px 0; }
-section h2 {
-  font-size:1.9rem;
-  color:#1f3c88;
-  margin-bottom:14px;
-  border-bottom:3px solid #dbe4ff;
-  padding-bottom:6px;
-}
+section h2 { font-size:1.9rem; color:#1f3c88; margin-bottom:14px; border-bottom:3px solid #dbe4ff; padding-bottom:6px; }
 section p, section ul { font-size:1.05rem; line-height:1.6; }
 section ul li { margin:10px 0; }
-.animated-btn {
-  display:inline-block;
-  margin-top:18px;
-  padding:12px 28px;
-  background:#4f46e5;
-  color:#fff;
-  text-decoration:none;
-  border-radius:6px;
-  font-weight:bold;
-  transition: all 0.3s ease;
-}
-.animated-btn:hover {
-  background:#6366f1;
-  transform:translateY(-3px);
-  box-shadow:0 4px 10px rgba(0,0,0,0.2);
-}
 
-/* Gradient Section */
-.gradient-section {
-  background: linear-gradient(135deg, #4f46e5 0%, #1f3c88 100%);
-  color:#fff;
-  padding:40px 20px;
-  border-radius:8px;
-  margin:40px 0;
-}
+/* Event cards */
+.event-card { background:#fff; border-radius:8px; padding:20px; margin:16px 0; box-shadow:0 3px 6px rgba(0,0,0,0.1); transition:0.3s; }
+.event-card:hover { transform:translateY(-2px); box-shadow:0 6px 14px rgba(0,0,0,0.15); }
+.event-card h3 { margin-top:0; color:#4f46e5; }
+.event-card .btn { display:inline-block; margin-top:10px; padding:10px 22px; background:#4f46e5; color:#fff; text-decoration:none; border-radius:6px; font-weight:bold; transition: all 0.3s ease; }
+.event-card .btn:hover { background:#6366f1; transform:translateY(-2px); box-shadow:0 4px 10px rgba(0,0,0,0.2); }
 
 /* Footer */
-footer {
-  text-align:center;
-  padding:18px;
-  font-size:0.9rem;
-  background:#162a5a;
-  color:#fff;
-  margin-top:40px;
-}
-footer .socials a {
-  margin:0 10px;
-  color:#fff;
-  transition:0.3s;
-}
+footer { text-align:center; padding:18px; font-size:0.9rem; background:#162a5a; color:#fff; margin-top:40px; }
+footer .socials a { margin:0 10px; color:#fff; transition:0.3s; }
 footer .socials a:hover { color:#a0c4ff; }
 
-/* Responsive adjustments */
-@media (max-width:600px){
-  header h1 { font-size:2rem; }
-  header p { font-size:1rem; }
-  nav a { margin:0 10px; font-size:0.9rem; }
-}
+@media (max-width:600px){ nav a { margin:0 10px; font-size:0.9rem; } header h1 { font-size:2rem; } header p { font-size:1.1rem; } }
 </style>
 </head>
 
 <body>
 
+<!-- Navbar -->
 <nav>
   <a href="index.html" class="active">Home</a>
   <a href="about.html">About</a>
@@ -161,45 +97,54 @@ footer .socials a:hover { color:#a0c4ff; }
   <a href="contact.html">Contact</a>
 </nav>
 
+<!-- Hero -->
 <header>
   <h1>International Human Rights Society</h1>
   <p>Advocacy, Education & Community</p>
   <a href="about.html" class="hero-btn">Learn More</a>
 </header>
 
+<!-- About preview -->
 <div class="container">
   <section>
-    <h2>Welcome</h2>
-    <p>The International Human Rights Society (IHRS) is a student‑led community dedicated to awareness, education, and advocacy on human rights locally and globally.</p>
+    <h2>About IHRS</h2>
+    <p>The International Human Rights Society (IHRS) is a student-led community dedicated to promoting human rights awareness, education, and advocacy. We organize events, campaigns, and seminars to engage with local and global human rights issues.</p>
+    <a href="about.html" class="hero-btn">Read More</a>
   </section>
 
-  <section class="gradient-section">
-    <h2>Get Involved</h2>
-    <p>We organize seminars, discussions, campaigns, and collaborations with NGOs and student groups. Everyone is welcome!</p>
-    <ul>
-      <li><a href="events.html" class="animated-btn"><i class="fas fa-calendar-alt"></i> View Upcoming Events</a></li>
-      <li><a href="about.html" class="animated-btn"><i class="fas fa-users"></i> Learn About Us</a></li>
-      <li><a href="contact.html" class="animated-btn"><i class="fas fa-envelope"></i> Contact Us</a></li>
-    </ul>
+  <!-- Events preview -->
+  <section>
+    <h2>Upcoming Events</h2>
+    <div class="event-card">
+      <h3><i class="fas fa-calendar-alt"></i> Human Rights Awareness Seminar</h3>
+      <p>Date: 12th March 2026 | Time: 10:00 AM - 1:00 PM</p>
+      <p>Join us for a seminar discussing global human rights challenges and local advocacy initiatives.</p>
+      <a href="events.html" class="btn"><i class="fas fa-envelope"></i> RSVP</a>
+    </div>
+    <div class="event-card">
+      <h3><i class="fas fa-calendar-alt"></i> Community Volunteering Day</h3>
+      <p>Date: 28th March 2026 | Time: 9:00 AM - 4:00 PM</p>
+      <p>Participate in hands-on activities to support local communities and promote social justice.</p>
+      <a href="events.html" class="btn"><i class="fas fa-envelope"></i> Join</a>
+    </div>
   </section>
 </div>
 
+<!-- Footer -->
 <footer>
   <div class="socials">
     <a href="#"><i class="fab fa-facebook-f"></i></a>
     <a href="#"><i class="fab fa-twitter"></i></a>
     <a href="#"><i class="fab fa-instagram"></i></a>
   </div>
-  <p>© 2026 IHRS </p>
+  <p>© 2026 IHRS – Built with ❤️ using GitHub Pages</p>
 </footer>
 
+<!-- Active navbar link script -->
 <script>
-// Highlight active navbar link
 const links = document.querySelectorAll('nav a');
 links.forEach(link => {
-  if(link.href === window.location.href){
-    link.classList.add('active');
-  }
+  if(link.href === window.location.href){ link.classList.add('active'); }
 });
 </script>
 
