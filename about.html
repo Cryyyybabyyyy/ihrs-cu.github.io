@@ -1,37 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>IHRS | About</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>IHRS | About</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    html { scroll-behavior: smooth; }
-    body { margin:0; font-family:'Segoe UI', Arial, sans-serif; background:#f8f9fb; color:#333; }
-    header { background:#1f3c88; color:#fff; text-align:center; padding:60px 20px; }
-    header h1 { margin:0; font-size:2.5rem; }
-    header p { margin:8px 0 0; font-size:1.1rem; opacity:0.85; }
-    nav { display:flex; justify-content:center; background:#162a5a; padding:12px 0; position:sticky; top:0; z-index:100; }
-    nav a { color:#fff; margin:0 18px; text-decoration:none; font-weight:600; font-size:0.95rem; transition:0.3s ease; }
-    nav a:hover { color:#a0c4ff; }
-    .container { max-width:1000px; margin:auto; padding:30px 20px; }
-    h2 { color:#1f3c88; font-size:1.8rem; margin-bottom:12px; border-bottom:3px solid #dbe4ff; padding-bottom:6px; }
-    ul { padding-left:20px; }
-    .animated-btn { display:inline-block; margin-top:18px; padding:12px 28px; background:#4f46e5; color:#fff; text-decoration:none; border-radius:6px; font-weight:bold; transition: all 0.3s ease; }
-    .animated-btn:hover { background:#6366f1; transform:translateY(-3px); box-shadow:0 4px 10px rgba(0,0,0,0.2); }
-    footer { text-align:center; padding:18px; font-size:0.9rem; background:#162a5a; color:#fff; margin-top:40px; }
-  </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+html { scroll-behavior: smooth; }
+body { margin:0; font-family:'Segoe UI', Arial, sans-serif; background:#f8f9fb; color:#333; }
+
+nav {
+  display:flex; justify-content:center; background:#162a5a; padding:12px 0; position:sticky; top:0; z-index:100;
+}
+nav a { color:#fff; margin:0 18px; text-decoration:none; font-weight:600; font-size:0.95rem; transition:0.3s; }
+nav a:hover, nav a.active { color:#a0c4ff; }
+
+.container { max-width:1000px; margin:auto; padding:40px 20px; }
+section { padding:30px 0; }
+section h2 { font-size:1.9rem; color:#1f3c88; margin-bottom:14px; border-bottom:3px solid #dbe4ff; padding-bottom:6px; }
+section p, section ul { font-size:1.05rem; line-height:1.6; }
+section ul li { margin:10px 0; }
+.animated-btn { display:inline-block; margin-top:18px; padding:12px 28px; background:#4f46e5; color:#fff; text-decoration:none; border-radius:6px; font-weight:bold; transition: all 0.3s ease; }
+.animated-btn:hover { background:#6366f1; transform:translateY(-3px); box-shadow:0 4px 10px rgba(0,0,0,0.2); }
+
+footer { text-align:center; padding:18px; font-size:0.9rem; background:#162a5a; color:#fff; margin-top:40px; }
+footer .socials a { margin:0 10px; color:#fff; transition:0.3s; }
+footer .socials a:hover { color:#a0c4ff; }
+
+@media (max-width:600px){ nav a { margin:0 10px; font-size:0.9rem; } }
+</style>
 </head>
-<body>
 
-<header>
-  <h1>International Human Rights Society</h1>
-  <p>Advocacy, Education & Community</p>
-</header>
+<body>
 
 <nav>
   <a href="index.html">Home</a>
-  <a href="about.html">About</a>
+  <a href="about.html" class="active">About</a>
   <a href="events.html">Events</a>
   <a href="contact.html">Contact</a>
 </nav>
@@ -39,25 +45,41 @@
 <div class="container">
   <section>
     <h2>About IHRS</h2>
-    <p>The International Human Rights Society (IHRS) is a student-led community committed to promoting awareness, advocacy, and education on human rights issues.</p>
-    <p>We create a platform where students can engage in meaningful discussions, campaigns, and initiatives contributing to social justice and equality.</p>
+    <p>The International Human Rights Society (IHRS) is a student-led community at our university dedicated to promoting human rights awareness, education, and advocacy. Our members organize events, campaigns, and seminars to engage with local and global human rights issues.</p>
   </section>
 
   <section>
     <h2>Our Mission</h2>
     <ul>
-      <li>Promote awareness of human rights issues</li>
-      <li>Encourage student participation in advocacy</li>
-      <li>Organize educational events and workshops</li>
-      <li>Collaborate with national and international organizations</li>
+      <li>Raise awareness about human rights globally and locally.</li>
+      <li>Organize educational seminars, campaigns, and discussions.</li>
+      <li>Collaborate with NGOs, student groups, and international organizations.</li>
+      <li>Provide a platform for students to advocate for social justice.</li>
     </ul>
-    <a href="events.html" class="animated-btn">See Events</a>
+  </section>
+
+  <section>
+    <h2>Join Us</h2>
+    <p>If you are passionate about human rights and want to make a difference, join IHRS today!</p>
+    <a href="contact.html" class="animated-btn"><i class="fas fa-envelope"></i> Contact Us to Join</a>
   </section>
 </div>
 
 <footer>
-  © 2026 IHRS – Built with ❤️ using GitHub Pages
+  <div class="socials">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+  </div>
+  <p>© 2026 IHRS – Built with ❤️ using GitHub Pages</p>
 </footer>
+
+<script>
+const links = document.querySelectorAll('nav a');
+links.forEach(link => {
+  if(link.href === window.location.href){ link.classList.add('active'); }
+});
+</script>
 
 </body>
 </html>
