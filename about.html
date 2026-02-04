@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    html { scroll-behavior: smooth; }
     body { margin:0; font-family:'Segoe UI', Arial, sans-serif; background:#f8f9fb; color:#333; }
     header { background:#1f3c88; color:#fff; text-align:center; padding:60px 20px; }
     header h1 { margin:0; font-size:2.5rem; }
@@ -16,6 +17,8 @@
     .container { max-width:1000px; margin:auto; padding:30px 20px; }
     h2 { color:#1f3c88; font-size:1.8rem; margin-bottom:12px; border-bottom:3px solid #dbe4ff; padding-bottom:6px; }
     ul { padding-left:20px; }
+    .animated-btn { display:inline-block; margin-top:18px; padding:12px 28px; background:#4f46e5; color:#fff; text-decoration:none; border-radius:6px; font-weight:bold; transition: all 0.3s ease; }
+    .animated-btn:hover { background:#6366f1; transform:translateY(-3px); box-shadow:0 4px 10px rgba(0,0,0,0.2); }
     footer { text-align:center; padding:18px; font-size:0.9rem; background:#162a5a; color:#fff; margin-top:40px; }
   </style>
 </head>
@@ -48,6 +51,7 @@
       <li>Organize educational events and workshops</li>
       <li>Collaborate with national and international organizations</li>
     </ul>
+    <a href="events.html" class="animated-btn">See Events</a>
   </section>
 </div>
 
